@@ -2,7 +2,7 @@ import string
 import re
 
 class parser:
-	def __init__(self,results,word,file):
+	def __init__(self,results,word=""):
 		self.results=results
 		self.word=word
 		self.temp=[]
@@ -16,7 +16,8 @@ class parser:
 		self.results = re.sub('%2f', ' ', self.results)
 		self.results = re.sub('%3a', ' ', self.results)
 		self.results = re.sub('<strong>', '', self.results)
-		self.results = re.sub('</strong>', '', self.results)
+		self.results = re.sub('</strong>', '', self.results)	
+		self.results = re.sub('<w:t>',' ',self.results)
 
 
 		for e in ('>',':','=', '<', '/', '\\',';','&','%3A','%3D','%3C'):
@@ -32,7 +33,7 @@ class parser:
 		
 	def emails(self):
 		self.genericClean()
-		reg_emails = re.compile('[a-zA-Z0-9.-_]*' + '@' + '[a-zA-Z0-9.-]*' + self.word)
+		reg_emails = re.compile('[a-zA-Z0-9.-_]+' + '@' + '[a-zA-Z0-9.-]+')
 		self.temp = reg_emails.findall(self.results)
 		emails=self.unique()
 		return emails
@@ -42,8 +43,10 @@ class parser:
 		reg_urls = re.compile('<a href="(.*?)"')
 		self.temp = reg_urls.findall(self.results)
 		allurls=self.unique()
-		for x in allurls:
-			if x.count('webcache') or x.count('google.com') or x.count('search?'):
+		for z in allurls:
+			y = string.replace(z,'/url?q=','')
+			x = y.split('&')[0]
+			if x.count('webcache') or x.count('google.com') or x.count('search?') or x.count('about.html') or x.count('privacy.html') or x.count('ads/') or x.count('services/') or x == "#" or x=="/":
 				pass
 			else:
 				urls.append(x)
@@ -81,8 +84,8 @@ class parser:
 		self.genericClean()
 		reg_hosts = re.compile('[a-zA-Z0-9.-]*\.'+ self.word)
 		self.temp = reg_hosts.findall(self.results)
-		hostnames=self.unique()
-		return hostnames
+		hosts=self.unique()
+		return hosts
 
 	def hostnames_all(self):
 		reg_hosts = re.compile('<cite>(.*?)</cite>')
