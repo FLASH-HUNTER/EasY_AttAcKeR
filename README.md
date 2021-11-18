@@ -1,4 +1,4 @@
-## EasY_HaCk
+## EasY_AttAcKeR
 1. Hack the World using Termux
 this tool is developed by sabri.zaki for penetration testing using 
 2. metasploit-framework 
@@ -14,12 +14,12 @@ all that on Termux
 1. `pkg update`
 2. `pkg upgrade`
 3. `pkg install git`
-4. `git clone https://github.com/sabri-zaki/EasY_HaCk`
-5. cd EasY_HaCk/
+4. `git clone https://github.com/FLASH-HUNTER/EasY_AttAcKeR`
+5. cd EasY_AttAcKeR
 6. `chmod +x install.sh`
-7. Type `EasY-HaCk`
+7. `bash EasY_HaCk`
 
-![](.modules/EasY_HaCk.png)
+![](https://user-images.githubusercontent.com/83442984/142362335-41ae2d0e-bbc9-4963-9845-cc5119070333.jpg)
 
 ## [ USAGE ]:
 {1}-Payload Generator
@@ -42,9 +42,10 @@ all that on Termux
 To update the Tool choose option number `10`
 
 
-## [My YouTube Channel]
-
-🔘 https://youtube.com/c/sabrizaki
-
+### Find Me on :
+<p align="left">
+  <a href="https://github.com/KING-HANTER" target="_blank"><img src="https://img.shields.io/badge/Github-king hanter-green?style=for-the-badge&logo=github"></a>
+  
+  <a href="https://www.instagram.com/hamid_rezakh1399" target="_blank"><img src="https://img.shields.io/badge/IG-%40king hanter-red?style=for-the-badge&logo=instagram"></a>
 
 
