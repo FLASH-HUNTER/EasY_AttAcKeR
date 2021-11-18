@@ -15,7 +15,7 @@ all that on Termux
 2. `pkg upgrade`
 3. `pkg install git`
 4. `git clone https://github.com/FLASH-HUNTER/EasY_AttAcKeR`
-5. cd EasY_AttAcKeR
+5. `cd EasY_AttAcKeR`
 6. `chmod +x install.sh`
 7. `bash EasY_HaCk`
 
